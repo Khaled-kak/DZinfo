@@ -1,13 +1,19 @@
-document.addEventListener("DOMContentLoaded", function() {
-    console.log("DZInformation site loaded successfully!");
-
+document.addEventListener("DOMContentLoaded", function () {
+    // Example functionality: Toggle active class on navigation links
     const navLinks = document.querySelectorAll("nav ul li a");
+    
     navLinks.forEach(link => {
-        link.addEventListener("mouseover", () => {
-            link.style.color = "red";
+        link.addEventListener("click", function () {
+            navLinks.forEach(nav => nav.classList.remove("active"));
+            this.classList.add("active");
         });
-        link.addEventListener("mouseout", () => {
-            link.style.color = "black";
+    });
+    
+    // Example Poll Button Interaction
+    const pollButtons = document.querySelectorAll(".polls button");
+    pollButtons.forEach(button => {
+        button.addEventListener("click", function () {
+            alert(`Vous avez voté: ${this.textContent}`);
         });
     });
 });
