@@ -1,4 +1,3 @@
-/* Styles généraux */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -7,12 +6,11 @@ body {
     color: #333;
 }
 
-/* En-tête */
 header {
-    background: white;
+    background: #fff;
     padding: 20px;
     text-align: center;
-    border-bottom: 3px solid #0073e6;
+    border-bottom: 2px solid #ccc;
 }
 
 nav ul {
@@ -21,20 +19,19 @@ nav ul {
     display: flex;
     justify-content: center;
     background: #fff;
-    border-bottom: 2px solid #ccc;
+    border-bottom: 1px solid #ccc;
 }
 
 nav ul li {
-    margin: 10px 15px;
+    margin: 10px;
 }
 
 nav ul li a {
     text-decoration: none;
-    color: #0073e6;
+    color: #000;
     font-weight: bold;
 }
 
-/* Mise en page principale */
 .container {
     display: flex;
     max-width: 1200px;
@@ -46,7 +43,7 @@ nav ul li a {
 .sidebar {
     width: 25%;
     background: white;
-    padding: 15px;
+    padding: 20px;
     border: 1px solid #ddd;
 }
 
@@ -54,38 +51,20 @@ nav ul li a {
     flex-grow: 1;
     background: white;
     padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    border: 1px solid #ddd;
 }
 
-.article {
-    margin-bottom: 20px;
-    border-bottom: 1px solid #ddd;
-    padding-bottom: 15px;
-}
-
-.article img {
+article img {
     width: 100%;
+    height: auto;
     border-radius: 5px;
 }
 
-.footer {
+footer {
+    text-align: center;
+    padding: 10px;
     background: #222;
     color: white;
-    text-align: center;
-    padding: 15px;
-    margin-top: 20px;
-}
-
-/* Styles Responsives */
-@media screen and (max-width: 768px) {
-    .container {
-        flex-direction: column;
-    }
-    .sidebar {
-        width: 100%;
-    }
-    .content {
-        padding: 10px;
-    }
+    position: relative;
+    width: 100%;
 }
