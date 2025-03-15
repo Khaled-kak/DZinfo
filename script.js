@@ -1,19 +1,22 @@
-document.addEventListener("DOMContentLoaded", function () {
-    // Example functionality: Toggle active class on navigation links
-    const navLinks = document.querySelectorAll("nav ul li a");
-    
-    navLinks.forEach(link => {
-        link.addEventListener("click", function () {
-            navLinks.forEach(nav => nav.classList.remove("active"));
-            this.classList.add("active");
+document.addEventListener("DOMContentLoaded", function() {
+    console.log("DZInformation site loaded successfully!");
+
+    // Exemple d'interaction : Changer la couleur du texte du titre au survol
+    let title = document.querySelector("h2");
+    if (title) {
+        title.addEventListener("mouseover", function() {
+            title.style.color = "#d9534f"; // Rouge foncé
         });
-    });
-    
-    // Example Poll Button Interaction
-    const pollButtons = document.querySelectorAll(".polls button");
-    pollButtons.forEach(button => {
-        button.addEventListener("click", function () {
-            alert(`Vous avez voté: ${this.textContent}`);
+        title.addEventListener("mouseout", function() {
+            title.style.color = "#333"; // Retour à la couleur initiale
         });
-    });
+    }
+
+    // Exemple d'interaction : Bouton d'alerte sur la page contact
+    let contactBtn = document.querySelector("#contact-btn");
+    if (contactBtn) {
+        contactBtn.addEventListener("click", function() {
+            alert("Merci de nous contacter ! Nous vous répondrons rapidement.");
+        });
+    }
 });
