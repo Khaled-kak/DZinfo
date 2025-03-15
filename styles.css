@@ -1,3 +1,4 @@
+/* Styles généraux */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -6,13 +7,22 @@ body {
     color: #333;
 }
 
+/* En-tête */
 header {
     background: white;
-    padding: 20px;
     text-align: center;
+    padding: 20px;
     border-bottom: 2px solid #ccc;
 }
 
+.logo h1 {
+    font-size: 2em;
+}
+
+.dz { color: green; font-weight: bold; }
+.info { color: red; font-weight: bold; }
+
+/* Barre de navigation */
 nav ul {
     list-style: none;
     padding: 0;
@@ -21,57 +31,26 @@ nav ul {
     background: #fff;
     border-bottom: 1px solid #ccc;
 }
-
 nav ul li {
     margin: 10px;
 }
-
 nav ul li a {
     text-decoration: none;
     color: #000;
     font-weight: bold;
 }
 
+/* Contenu principal */
 main {
-    max-width: 1200px;
-    margin: 20px auto;
-    padding: 20px;
-    background: white;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-section {
-    margin-bottom: 30px;
-}
-
-.editorial, .featured-news, .polls, .analysis, .top-articles {
-    padding: 20px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-}
-
-h2, h3 {
-    color: #003366;
-}
-
-button {
-    padding: 10px 20px;
-    background: #007bff;
-    color: white;
-    border: none;
-    cursor: pointer;
-}
-
-button:hover {
-    background: #0056b3;
-}
-
-footer {
+    padding: 40px;
     text-align: center;
-    padding: 10px;
+}
+
+/* Pied de page */
+footer {
     background: #222;
     color: white;
-    position: relative;
-    width: 100%;
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
 }
