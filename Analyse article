@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analyse Détaillée Article</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa;
+        }
+        header {
+            text-align: center;
+            padding: 20px;
+            background: white;
+            border-bottom: 2px solid #ccc;
+        }
+        .dz { color: green; font-weight: bold; }
+        .info { color: red; font-weight: bold; }
+        nav ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            background: #fff;
+            border-bottom: 1px solid #ccc;
+        }
+        nav ul li {
+            margin: 10px;
+        }
+        nav ul li a {
+            text-decoration: none;
+            color: #000;
+            font-weight: bold;
+        }
+        .container {
+            display: flex;
+            max-width: 1200px;
+            margin: auto;
+            padding: 20px;
+        }
+        .content {
+            flex-grow: 1;
+            padding: 20px;
+            background: white;
+        }
+        .content h2 {
+            font-size: 1.5em;
+            font-weight: bold;
+        }
+        .most-read {
+            margin-top: 40px;
+            padding: 20px;
+            background: white;
+        }
+        .most-read h2 {
+            font-size: 1.5em;
+            font-weight: bold;
+        }
+        .most-read-list {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            list-style: none;
+            padding: 0;
+        }
+        .most-read-list li {
+            display: flex;
+            align-items: flex-start;
+        }
+        .most-read-number {
+            font-size: 2em;
+            font-weight: bold;
+            margin-right: 10px;
+            color: #000;
+        }
+        footer {
+            background: #222;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+        }
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 15px;
+        }
+        .footer-links a {
+            color: white;
+            text-decoration: none;
+            font-size: 14px;
+        }
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+    </style>
+</head>
+<body>
+    <!-- En-tête -->
+    <header>
+        <div class="logo">
+            <h1><span class="dz">DZ</span><span class="info">INFORMATION</span></h1>
+            <p>L’enjeu de l’info & désinfo « Algérie »</p>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#">Accueil</a></li>
+                <li><a href="#">Analyse</a></li>
+                <li><a href="#">Observatoire Media</a></li>
+                <li><a href="#">Réinformation</a></li>
+                <li><a href="#">Qui sommes-nous</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <h2 style="text-align:center; margin-top: 20px;">Analyse Détaillée Article</h2>
+    
+    <!-- Contenu principal -->
+    <div class="container">
+        <section class="content">
+            <h2>Statistiques du mois</h2>
+            <img src="stats-month.png" alt="Graphique statistiques mensuelles">
+            
+            <h2>Articles les plus lus</h2>
+            <ul class="most-read-list">
+                <li><span class="most-read-number">1</span> Mulhouse : après l’attaque au couteau...</li>
+                <li><span class="most-read-number">2</span> Mohamed Amra, le narcotrafiquant...</li>
+                <li><span class="most-read-number">3</span> Administration Trump : la Cour suprême...</li>
+                <li><span class="most-read-number">4</span> Après un attentat islamiste à Mulhouse...</li>
+                <li><span class="most-read-number">5</span> En direct, Cisjordanie : Israël compte occuper...</li>
+                <li><span class="most-read-number">6</span> Gabriel Attal et cent parlementaires...</li>
+                <li><span class="most-read-number">7</span> En direct, guerre en Ukraine...</li>
+                <li><span class="most-read-number">8</span> Donald Trump et Elon Musk plongent...</li>
+                <li><span class="most-read-number">9</span> Adeline Dieudonné : « J’ai besoin de ma semaine...»</li>
+            </ul>
+        </section>
+    </div>
+    
+    <!-- Pied de page -->
+    <footer>
+        <div class="footer-links">
+            <a href="#">Mentions légales</a>
+            <a href="#">Charte</a>
+            <a href="#">Politique de confidentialité</a>
+            <a href="#">Gestion des cookies</a>
+            <a href="#">Conditions générales</a>
+        </div>
+        <div class="social-links">
+            <a href="#">📘 Facebook</a>
+            <a href="#">📺 YouTube</a>
+            <a href="#">🎵 TikTok</a>
+            <a href="#">📰 Fils RSS</a>
+        </div>
+    </footer>
+</body>
+</html>
