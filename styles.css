@@ -7,7 +7,7 @@ body {
 }
 
 header {
-    background: #fff;
+    background: white;
     padding: 20px;
     text-align: center;
     border-bottom: 2px solid #ccc;
@@ -33,7 +33,7 @@ nav ul li a {
 }
 
 main {
-    max-width: 800px;
+    max-width: 1200px;
     margin: 20px auto;
     padding: 20px;
     background: white;
@@ -41,12 +41,37 @@ main {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
+section {
+    margin-bottom: 30px;
+}
+
+.editorial, .featured-news, .polls, .analysis, .top-articles {
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+h2, h3 {
+    color: #003366;
+}
+
+button {
+    padding: 10px 20px;
+    background: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #0056b3;
+}
+
 footer {
     text-align: center;
     padding: 10px;
     background: #222;
     color: white;
-    position: absolute;
+    position: relative;
     width: 100%;
-    bottom: 0;
 }
