@@ -1,4 +1,3 @@
-// Exemple de fonction JavaScript pour ajouter de l'interactivité
 document.addEventListener('DOMContentLoaded', function() {
     // Ajouter un effet de survol aux articles
     const articles = document.querySelectorAll('#analyse-par-categorie article');
