@@ -4,6 +4,95 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DZINFORMATION - L'enjeu de l’info & désinfo « Algérie »</title>
+    <style>
+        /* Reset de base */
+        body, h1, h2, h3, h4, p, ul, li, article, section {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background-color: #f4f4f4;
+            color: #333;
+            padding: 20px;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 2.5em;
+        }
+
+        header h2 {
+            font-size: 1.5em;
+            margin-top: 10px;
+        }
+
+        nav ul {
+            list-style: none;
+            background-color: #444;
+            text-align: center;
+            padding: 10px;
+            margin: 20px 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin-right: 20px;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        nav ul li a:hover {
+            text-decoration: underline;
+        }
+
+        section, article {
+            background-color: #fff;
+            margin: 20px 0;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        section h3, article h3 {
+            margin-bottom: 15px;
+            font-size: 1.8em;
+            color: #333;
+        }
+
+        article p {
+            font-size: 1.1em;
+            line-height: 1.8;
+        }
+
+        #analyse-par-categorie article {
+            margin-bottom: 20px;
+        }
+
+        #analyse-par-categorie h4 {
+            font-size: 1.5em;
+            color: #555;
+            margin-bottom: 10px;
+        }
+
+        #analyse-par-categorie p {
+            font-size: 1em;
+            color: #666;
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -52,5 +141,33 @@
             <p>Yannis Bonneville, chef d’entreprise à 17 ans: «Avec l’intelligence artificielle, le champ des possibles est énorme !» ▼</p>
         </article>
     </section>
+
+    <script>
+        // Exemple de fonction JavaScript pour ajouter de l'interactivité
+        document.addEventListener('DOMContentLoaded', function() {
+            // Ajouter un effet de survol aux articles
+            const articles = document.querySelectorAll('#analyse-par-categorie article');
+            articles.forEach(article => {
+                article.addEventListener('mouseover', function() {
+                    this.style.transform = 'scale(1.02)';
+                    this.style.transition = 'transform 0.3s ease';
+                });
+                article.addEventListener('mouseout', function() {
+                    this.style.transform = 'scale(1)';
+                });
+            });
+
+            // Ajouter une fonctionnalité de défilement fluide pour les liens de navigation
+            const navLinks = document.querySelectorAll('nav ul li a');
+            navLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href').substring(1);
+                    const targetSection = document.getElementById(targetId);
+                    targetSection.scrollIntoView({ behavior: 'smooth' });
+                });
+            });
+        });
+    </script>
 </body>
 </html>
