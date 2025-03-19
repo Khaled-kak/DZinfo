@@ -249,5 +249,23 @@
     <div class="footer">
         <p>&copy; 2025 DZ Information. Tous droits réservés.</p>
     </div>
+    <script>
+    // Charger les articles depuis le localStorage
+    const articles = JSON.parse(localStorage.getItem('articles')) || [];
+
+    // Afficher les articles dans la colonne centrale
+    const mainContent = document.querySelector('.main-content');
+    if (articles.length > 0) {
+        const article = articles[0]; // Afficher le premier article (par exemple)
+        mainContent.innerHTML = `
+            <h1>${article.title}</h1>
+            <a href="#">Analyse approfondie</a>
+            <img src="${article.image}" alt="Image de l'article">
+            <p>${article.content}</p>
+        `;
+    } else {
+        mainContent.innerHTML = '<p>Aucun article disponible.</p>';
+    }
+</script>
 </body>
 </html>
