@@ -4,44 +4,90 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DZ Information - Accueil</title>
-    <link rel="stylesheet" href="styles.css">
     <style>
         body {
             font-family: Arial, sans-serif;
+            line-height: 1.6;
             margin: 0;
             padding: 0;
-            background-color: #ffffff;
+            background-color: #fff;
+            color: #333;
         }
-        header {
-            background-color: white;
-            padding: 15px 20px;
+
+        /* Header */
+        .header {
+            background-color: #163860;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+
+        /* Navigation Menu */
+        .nav-menu {
+            background-color: #1f66ba;
+            padding: 10px;
+            text-align: center;
+        }
+
+        .nav-menu a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+        }
+
+        .nav-menu a:hover {
+            text-decoration: underline;
+        }
+
+        /* Container for Columns */
+        .container {
             display: flex;
-            justify-content: space-between;
-            align-items: center;
-            border-bottom: 3px solid #008000;
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 0 20px;
         }
-        .top-bar {
-            width: 100%;
-            height: 5px;
-            background-color: #008000;
+
+        /* Columns */
+        .column {
+            padding: 10px;
+            border-right: 1px solid #ccc;
         }
+
+        .column:last-child {
+            border-right: none;
+        }
+
+        /* Middle Column Wider */
+        .column.middle {
+            flex: 2; /* Middle column is twice as wide as the others */
+        }
+
+        .column.left,
+        .column.right {
+            flex: 1; /* Left and right columns are equal in width */
+        }
+
+        /* Separators */
+        .separator {
+            border-top: 1px solid #ccc;
+            margin: 20px 0;
+        }
+
+        /* Footer */
+        .footer {
+            background-color: #163860;
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+            margin-top: 20px;
+        }
+
+        /* Custom Styles for Existing Content */
         .logo img {
             height: 60px;
         }
-        nav ul {
-            list-style: none;
-            padding: 0;
-            display: flex;
-        }
-        nav ul li {
-            margin: 0 15px;
-        }
-        nav ul li a {
-            text-decoration: none;
-            color: #000000;
-            font-weight: bold;
-            font-size: 16px;
-        }
+
         .auth button {
             background-color: #ffcc00;
             border: none;
@@ -50,92 +96,46 @@
             font-weight: bold;
             font-size: 14px;
         }
-        main {
-            display: flex;
-            justify-content: space-between;
-            padding: 30px;
-            max-width: 1200px;
-            margin: auto;
-            border-top: 3px solid #008000;
-        }
-        .sidebar, .categories {
-            width: 25%;
-            background: white;
-            padding: 20px;
-            border-radius: 5px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
-            position: relative;
-        }
-        .sidebar {
-            border-right: 2px solid #ddd;
-        }
-        .categories {
-            border-left: 2px solid #ddd;
-            height: 400px;
-            overflow-y: scroll;
-        }
-        .editorial {
-            border-bottom: 2px solid #ddd;
-            padding-bottom: 15px;
-            margin-bottom: 15px;
-        }
-        .main-content {
-            width: 50%;
-            background: white;
-            padding: 20px;
-            border-radius: 5px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
-        }
-        .main-content h1 {
-            font-size: 22px;
-            color: #003366;
-        }
-        .main-content a {
-            color: #0056b3;
-            font-weight: bold;
-        }
+
         .main-content img {
             width: 100%;
             border-radius: 5px;
             margin-top: 10px;
         }
+
         .poll {
             background: #e8f4ff;
             padding: 15px;
             border-radius: 5px;
             margin-bottom: 20px;
         }
-        footer {
-            text-align: center;
-            padding: 20px;
-            background: #333;
-            color: white;
-            font-size: 14px;
-        }
     </style>
 </head>
 <body>
-    <header>
+    <!-- Header -->
+    <div class="header">
         <div class="logo">
             <img src="Logo.png" alt="DZ Information">
         </div>
-        <nav>
-            <ul>
-                <li><a href="index.html">Accueil</a></li>
-                <li><a href="sentiment.html">Analyse</a></li>
-                <li><a href="sources.html">Observatoire Media</a></li>
-                <li><a href="enjeux.html">Réinformation</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </nav>
+    </div>
+
+    <!-- Navigation Menu -->
+    <div class="nav-menu">
+        <a href="index.html">Accueil</a>
+        <a href="sentiment.html">Analyse</a>
+        <a href="sources.html">Observatoire Media</a>
+        <a href="enjeux.html">Réinformation</a>
+        <a href="contact.html">Contact</a>
         <div class="auth">
             <button>Se connecter</button>
             <button>S’abonner</button>
         </div>
-    </header>
-    <div class="top-bar"></div>
-    <main>
-        <aside class="sidebar">
+    </div>
+
+    <!-- Three-Column Layout -->
+    <div class="container">
+        <!-- Left Column -->
+        <div class="column left">
             <div class="editorial">
                 <h3>Éditorial</h3>
                 <p>La presse d’extrême droite, au travers d’une manipulation insidieuse de l’information...</p>
@@ -152,13 +152,19 @@
                 <button>Objective</button>
                 <button>Biaisée</button>
             </div>
-        </aside>
-        <section class="main-content">
-            <h1>Un fait divers malheureux et condamnable transformé en enjeu politique par plusieurs médias et hommes politiques</h1>
-            <a href="#">Analyse approfondie</a>
-            <img src="image-placeholder.jpg" alt="Image de l'article">
-        </section>
-        <aside class="categories">
+        </div>
+
+        <!-- Middle Column (Wider) -->
+        <div class="column middle">
+            <div class="main-content">
+                <h1>Un fait divers malheureux et condamnable transformé en enjeu politique par plusieurs médias et hommes politiques</h1>
+                <a href="#">Analyse approfondie</a>
+                <img src="image-placeholder.jpg" alt="Image de l'article">
+            </div>
+        </div>
+
+        <!-- Right Column -->
+        <div class="column right">
             <h2>Analyse par catégorie</h2>
             <div class="category geopolitique">
                 <h3>Géopolitique</h3>
@@ -168,10 +174,12 @@
                 <h3>Économie</h3>
                 <p>Yannis Bonneville, chef d’entreprise à 17 ans...</p>
             </div>
-        </aside>
-    </main>
-    <footer>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
         <p>&copy; 2025 DZ Information. Tous droits réservés.</p>
-    </footer>
+    </div>
 </body>
 </html>
