@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin - Gestion des Articles</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        h1 {
+            text-align: center;
+        }
+        form {
+            background: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            margin: 0 auto 20px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        input[type="text"], textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #163860;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #1f66ba;
+        }
+        .articles-list {
+            background: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .article-item {
+            border-bottom: 1px solid #ccc;
+            padding: 10px 0;
+        }
+        .article-item:last-child {
+            border-bottom: none;
+        }
+        .article-item h3 {
+            margin: 0;
+        }
+        .article-item p {
+            margin: 5px 0;
+        }
+        .article-item button {
+            margin-right: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Gestion des Articles</h1>
+
+    <!-- Formulaire pour ajouter/modifier un article -->
+    <form id="articleForm">
+        <input type="hidden" id="articleId" value="">
+        <label for="title">Titre de l'article :</label>
+        <input type="text" id="title" required>
+        <label for="content">Contenu de l'article :</label>
+        <textarea id="content" rows="5" required></textarea>
+        <label for="image">URL de l'image :</label>
+        <input type="text" id="image">
+        <button type="submit">Enregistrer</button>
+    </form>
+
+    <!-- Liste des articles existants -->
+    <div class="articles-list" id="articlesList">
+        <h2>Articles Existants</h2>
+        <!-- Les articles seront ajoutés ici dynamiquement -->
+    </div>
+
+    <script>
+        // Fonction pour sauvegarder les articles dans le localStorage
+        function saveArticles(articles) {
+            localStorage.setItem('articles', JSON.stringify(articles));
+        }
+
+        // Fonction pour charger les articles depuis le localStorage
+        function loadArticles() {
+            const articles = localStorage.getItem('articles');
+            return articles ? JSON.parse(articles) : [];
+        }
+
+        // Afficher les articles dans la liste
+        function displayArticles() {
+            const articles = loadArticles();
+            const articlesList = document.getElementById('articlesList');
+            articlesList.innerHTML = '<h2>Articles Existants</h2>';
+
+            articles.forEach((article, index) => {
+                const articleItem = document.createElement('div');
+                articleItem.className = 'article-item';
+                articleItem.innerHTML = `
+                    <h3>${article.title}</h3>
+                    <p>${article.content}</p>
+                    <button onclick="editArticle(${index})">Modifier</button>
+                    <button onclick="deleteArticle(${index})">Supprimer</button>
+                `;
+                articlesList.appendChild(articleItem);
+            });
+        }
+
+        // Ajouter ou modifier un article
+        document.getElementById('articleForm').addEventListener('submit', function (e) {
+            e.preventDefault();
+            const articles = loadArticles();
+            const articleId = document.getElementById('articleId').value;
+            const title = document.getElementById('title').value;
+            const content = document.getElementById('content').value;
+            const image = document.getElementById('image').value;
+
+            if (articleId) {
+                // Modifier un article existant
+                articles[articleId] = { title, content, image };
+            } else {
+                // Ajouter un nouvel article
+                articles.push({ title, content, image });
+            }
+
+            saveArticles(articles);
+            displayArticles();
+            document.getElementById('articleForm').reset();
+            document.getElementById('articleId').value = '';
+        });
+
+        // Modifier un article
+        window.editArticle = function (index) {
+            const articles = loadArticles();
+            const article = articles[index];
+            document.getElementById('articleId').value = index;
+            document.getElementById('title').value = article.title;
+            document.getElementById('content').value = article.content;
+            document.getElementById('image').value = article.image;
+        };
+
+        // Supprimer un article
+        window.deleteArticle = function (index) {
+            const articles = loadArticles();
+            articles.splice(index, 1);
+            saveArticles(articles);
+            displayArticles();
+        };
+
+        // Afficher les articles au chargement de la page
+        displayArticles();
+    </script>
+</body>
+</html>
