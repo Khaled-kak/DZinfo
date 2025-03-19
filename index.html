@@ -19,25 +19,90 @@
             background-color: #163860;
             color: #fff;
             padding: 20px;
-            text-align: center;
+            display: flex;
+            justify-content: center; /* Centrer le logo */
+            align-items: center;
+            position: relative; /* Pour positionner le bouton "Se connecter" */
+        }
+
+        .header .logo img {
+            height: 60px;
+        }
+
+        .header .auth {
+            position: absolute;
+            right: 20px; /* Positionner le bouton "Se connecter" à droite */
+        }
+
+        .header .auth button {
+            background-color: #ffcc00;
+            border: none;
+            padding: 10px 15px;
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 14px;
+        }
+
+        .header .search {
+            position: absolute;
+            left: 20px; /* Positionner le champ de recherche à gauche */
+        }
+
+        .header .search input {
+            padding: 8px;
+            border: none;
+            border-radius: 4px;
+            margin-right: 10px;
+        }
+
+        .header .search button {
+            background-color: #ffcc00;
+            border: none;
+            padding: 8px 12px;
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 14px;
+            border-radius: 4px;
         }
 
         /* Navigation Menu */
         .nav-menu {
             background-color: #1f66ba;
             padding: 10px;
-            text-align: center;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
 
-        .nav-menu a {
+        .nav-menu ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            gap: 15px;
+        }
+
+        .nav-menu ul li {
+            margin: 0;
+        }
+
+        .nav-menu ul li a {
             color: #fff;
             text-decoration: none;
-            margin: 0 15px;
             font-weight: bold;
         }
 
-        .nav-menu a:hover {
+        .nav-menu ul li a:hover {
             text-decoration: underline;
+        }
+
+        .nav-menu .subscribe button {
+            background-color: #ffcc00;
+            border: none;
+            padding: 10px 15px;
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 14px;
         }
 
         /* Container for Columns */
@@ -84,19 +149,6 @@
         }
 
         /* Custom Styles for Existing Content */
-        .logo img {
-            height: 60px;
-        }
-
-        .auth button {
-            background-color: #ffcc00;
-            border: none;
-            padding: 10px 15px;
-            cursor: pointer;
-            font-weight: bold;
-            font-size: 14px;
-        }
-
         .main-content img {
             width: 100%;
             border-radius: 5px;
@@ -114,20 +166,28 @@
 <body>
     <!-- Header -->
     <div class="header">
+        <div class="search">
+            <input type="text" placeholder="Rechercher...">
+            <button>🔍</button>
+        </div>
         <div class="logo">
-            <img src="Logo.png" alt="DZ Information">
+            <img src="logo.png" alt="DZ Information"> <!-- Logo au centre -->
+        </div>
+        <div class="auth">
+            <button>Se connecter</button>
         </div>
     </div>
 
     <!-- Navigation Menu -->
     <div class="nav-menu">
-        <a href="index.html">Accueil</a>
-        <a href="sentiment.html">Analyse</a>
-        <a href="sources.html">Observatoire Media</a>
-        <a href="enjeux.html">Réinformation</a>
-        <a href="contact.html">Contact</a>
-        <div class="auth">
-            <button>Se connecter</button>
+        <ul>
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="sentiment.html">Analyse</a></li>
+            <li><a href="sources.html">Observatoire Media</a></li>
+            <li><a href="enjeux.html">Réinformation</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <div class="subscribe">
             <button>S’abonner</button>
         </div>
     </div>
@@ -140,12 +200,14 @@
                 <h3>Éditorial</h3>
                 <p>La presse d’extrême droite, au travers d’une manipulation insidieuse de l’information...</p>
             </div>
+            <div class="separator"></div> <!-- Ligne grise -->
             <div class="poll">
                 <h3>Sentiment</h3>
                 <p>Trouvez justifié l’ampleur de la couverture négative de l’Algérie par les médias français ?</p>
                 <button>Oui</button>
                 <button>Non</button>
             </div>
+            <div class="separator"></div> <!-- Ligne grise -->
             <div class="poll">
                 <h3>Biais et Objectivité</h3>
                 <p>Trouvez objective ou biaisée la couverture médiatique de l’Algérie par les médias français ?</p>
@@ -159,7 +221,7 @@
             <div class="main-content">
                 <h1>Un fait divers malheureux et condamnable transformé en enjeu politique par plusieurs médias et hommes politiques</h1>
                 <a href="#">Analyse approfondie</a>
-                <img src="image-placeholder.jpg" alt="Image de l'article">
+                <img src="Pic1.png" alt="Image de l'article"> <!-- Image de l'article -->
             </div>
         </div>
 
@@ -170,6 +232,7 @@
                 <h3>Géopolitique</h3>
                 <p>Yannis Bonneville, chef d’entreprise à 17 ans...</p>
             </div>
+            <div class="separator"></div> <!-- Ligne grise -->
             <div class="category economie">
                 <h3>Économie</h3>
                 <p>Yannis Bonneville, chef d’entreprise à 17 ans...</p>
